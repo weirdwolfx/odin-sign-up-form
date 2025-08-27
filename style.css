@@ -41,6 +41,10 @@ body {
 
 .content {
     --padding-left-content: 40px;
+    --button-link-font-size: 1.05rem;
+    --valid-input-color: lightgreen;
+    --invalid-input-color: red;
+    --charmander-theme-color: rgb(201,83,83);
 }
 
 .content {
@@ -55,6 +59,7 @@ div.input > div {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    position: relative;
 }
 
 div.input {
@@ -67,8 +72,8 @@ fieldset {
     flex-direction: column;
     gap: 20px;
     background-color: white;
-    box-shadow: 0px 0px 10px var(--box-shadow-color);
-    padding: var(--padding-left-content);
+    box-shadow: 0px 1px 10px var(--box-shadow-color);
+    padding: 20px var(--padding-left-content) 40px;
     padding-right: 30%;
 }
 
@@ -76,33 +81,85 @@ fieldset input {
     padding: 5px 10px;
     border: 1.5px solid #E5E7EB;
     border-radius: 4px;
+    margin-right: 3ch;
+}
+
+fieldset input:user-invalid {
+    border-color: var(--invalid-input-color);
+    border-width: 1.5px;
+}
+
+fieldset input + span::after {
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    font-size: 1.25rem;
+}
+
+fieldset input:user-invalid + span::after {
+    content: "\2716";
+    color: var(--invalid-input-color);
+}
+
+fieldset input:user-valid + span::after {
+    content: "\2714";
+    color: var(--valid-input-color);
+}
+
+fieldset input:user-valid {
+    border-color: var(--valid-input-color);
+    border-width: 1.5px;
 }
 
 button[type="submit"] {
-    background-color: #596D48;
+    background-color: var(--charmander-theme-color);
     padding: 0.75em 2.25em;
     color: white;
     border-radius: 12px;
-    font-size: 1rem;
+    font-size: var(--button-link-font-size);
     box-shadow: 0px 0px 10px var(--box-shadow-color);
     margin: var(--padding-left-content);
+    margin-bottom: 20px;
     cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    filter: brightness(0.9);
+    box-shadow: none;
 }
 
 div.log-in {
     margin-left: var(--padding-left-content);
 }
 
+.log-in > p {
+    font-size: var(--button-link-font-size);
+}
+
 .log-in a {
-    color: green
+    color: var(--charmander-theme-color);
+}
+
+.log-in a:hover {
+    filter: brightness(0.9);
 }
 
 form .form-heading {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--charmander-theme-color);
     font-weight: bold;
 }
 
 form  label {
     font-size: 0.7rem;
     letter-spacing: 0.25ch;
+}
+
+.introduction {
+    font-size: 1.4rem;
+    font-style: oblique;
+    padding: var(--padding-left-content);
+    padding-bottom: 25px;
+    max-width: 70ch;
+    color: var(--charmander-theme-color);
 }
