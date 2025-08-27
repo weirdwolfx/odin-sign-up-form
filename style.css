@@ -78,7 +78,7 @@ fieldset {
 }
 
 fieldset input {
-    padding: 5px 10px;
+    padding: 6px 10px;
     border: 1.5px solid #E5E7EB;
     border-radius: 4px;
     margin-right: 3ch;
@@ -109,6 +109,10 @@ fieldset input:user-valid + span::after {
 fieldset input:user-valid {
     border-color: var(--valid-input-color);
     border-width: 1.5px;
+}
+
+fieldset input::placeholder {
+    color: rgb(172, 164, 164);
 }
 
 button[type="submit"] {
