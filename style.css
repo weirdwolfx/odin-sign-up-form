@@ -151,7 +151,7 @@ fieldset input:user-valid {
 }
 
 fieldset input::placeholder {
-    color: rgb(172, 164, 164);
+    color: rgb(198, 190, 190);
 }
 
 input:focus-visible {
