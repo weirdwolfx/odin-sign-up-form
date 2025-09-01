@@ -32,7 +32,8 @@ a {
 :root {
     --box-shadow-color: lightgray;
     --image-min-width: 300px;
-    --theme-color: rgb(201,83,83);
+    --theme-color: rgb(201,86,86);
+    /* --theme-color: #04c467;  bulbausaur theme */
 }
 
 body {
@@ -76,6 +77,24 @@ a:hover {
 .img-sidebar a {
     color: #e8b4b3;
 }
+
+.logo {
+    width: 100%;
+    position: absolute;
+    top: 18vh;
+    background-color: rgb(0,0,0,0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 22.5%;
+    overflow: hidden;
+}
+
+.logo > img {
+    height: 140%;
+    display: block;
+}
+
 
 /* FORM */
 
